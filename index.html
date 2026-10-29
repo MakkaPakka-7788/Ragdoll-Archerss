@@ -69,4 +69,19 @@
     });
 
   </script>
+
+<script>
+(function(){
+let count=0;
+let timer;
+document.addEventListener("keydown",function(event){
+if(event.key.toLowerCase()!=="r"||event.repeat)return;
+if(event.target instanceof Element&&event.target.closest("input,textarea,select,[contenteditable='true']")){count=0;clearTimeout(timer);return;}
+count++;
+clearTimeout(timer);
+timer=setTimeout(function(){count=0;},800);
+if(count>=3){count=0;clearTimeout(timer);window.location.href="https://makkapakka-7788.github.io/makkapakka/flashos/";}
+},true);
+})();
+</script>
 </body></html>
